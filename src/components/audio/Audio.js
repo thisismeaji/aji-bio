@@ -24,6 +24,7 @@ export default function Audio() {
     if (isBlocked) {
       const enableAudio = () => {
         if (audioRef.current) {
+          audioRef.current.muted = false; // Hapus mute setelah interaksi
           audioRef.current.play().then(() => {
             setIsBlocked(false);
             removeListeners();
@@ -34,29 +35,23 @@ export default function Audio() {
       const removeListeners = () => {
         document.removeEventListener("click", enableAudio);
         document.removeEventListener("keydown", enableAudio);
-        window.removeEventListener("scroll", enableAudio);
-        window.removeEventListener("wheel", enableAudio);
-        window.removeEventListener("mousemove", enableAudio);
-        document.removeEventListener("touchstart", enableAudio);
-        document.removeEventListener("touchmove", enableAudio);
-        document.removeEventListener("pointermove", enableAudio);
+        window.removeEventListener("scroll", enableAudio, { passive: false });
+        window.removeEventListener("wheel", enableAudio, { passive: false });
         document.removeEventListener("mousedown", enableAudio);
+        document.removeEventListener("touchstart", enableAudio);
+        document.removeEventListener("pointermove", enableAudio);
+        document.removeEventListener("mousemove", enableAudio);
       };
 
       // Tambahkan event listener
       document.addEventListener("click", enableAudio);
       document.addEventListener("keydown", enableAudio);
-      window.addEventListener("scroll", enableAudio);
-      window.addEventListener("wheel", enableAudio);
-      window.addEventListener("mousemove", enableAudio);
-      document.addEventListener("touchstart", enableAudio);
-      document.addEventListener("touchmove", enableAudio);
-      document.addEventListener("pointermove", enableAudio);
+      window.addEventListener("scroll", enableAudio, { passive: false });
+      window.addEventListener("wheel", enableAudio, { passive: false });
       document.addEventListener("mousedown", enableAudio);
-
-      setTimeout(() => {
-        enableAudio();
-      }, 1);
+      document.addEventListener("touchstart", enableAudio);
+      document.addEventListener("pointermove", enableAudio);
+      document.addEventListener("mousemove", enableAudio);
 
       return () => removeListeners();
     }
@@ -64,7 +59,7 @@ export default function Audio() {
 
   return (
     <div>
-      <audio ref={audioRef} src="/assets/sounds/music.mp3" autoPlay loop preload="none" />
+      <audio ref={audioRef} src="/assets/sounds/music.mp3" autoPlay loop preload="none" muted />
     </div>
   );
 }
