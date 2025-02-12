@@ -5,6 +5,7 @@ import Link from "next/link";
 import Profile from "@/components/profile/Profile";
 import ListLink from "@/components/list/listlink/ListLink";
 import Audio from "@/components/audio/Audio";
+import SocialMedia from "@/components/socialmedia/SocialMedia";
 
 export default function Home() {
   return (
@@ -14,9 +15,7 @@ export default function Home() {
       <div className={Styles.card}>
         <Profile/>
         <ListLink/>
-        <div className={Styles.socialMedia}>
-          
-        </div>
+        <SocialMedia/>
       </div>
     </section>
   );
