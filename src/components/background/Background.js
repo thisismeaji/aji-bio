@@ -5,7 +5,7 @@ export default function Background() {
   return (
     <div className={Styles.container}>
       <video className={Styles.background} autoPlay loop muted playsInline>
-        <source src="/assets/videos/background.webm" type="video/webm" />
+        <source src="/assets/videos/background.mp4" type="video/webm" />
         Browser tidak mendukung video.
       </video>
     </div>
