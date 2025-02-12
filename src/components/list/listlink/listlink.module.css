@@ -1,0 +1,63 @@
+.list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.list .button{
+    width: 100%;
+    padding: 0.9rem 2rem;
+    font-size: 1em;
+    font-family: "Poppins";
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease-out;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.31);
+    color: var(--background);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.list .button:hover{
+    transform: scale(1.03);
+    color: var(--foreground);
+    background-color: var(--background);
+}
+
+
+.list .button:hover .shareLink span{
+    background-color: var(--foreground);
+}
+
+.shareLink{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1rem;
+    width: 1rem;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.shareLink > span{
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background-color: var(--background);
+    border-radius: 10px;
+}

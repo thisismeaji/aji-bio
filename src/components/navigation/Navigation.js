@@ -11,7 +11,7 @@ export default function Navigation() {
       <div className={Styles.logo}>
         <Link href="/">
           <Image
-            src="/assets/images/logo.png"
+            src="/assets/icons/bell.png"
             alt="Logo Ajisaka Kamandanu"
             width={1000}
             height={1000}
