@@ -19,3 +19,9 @@
     padding: 3rem 2rem;
 }
 
+
+@media screen and (max-width:786px){
+    .section{
+        padding-top: 4rem;
+    }
+}

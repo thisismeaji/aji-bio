@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useEffect, useRef, useState } from "react";
 
@@ -27,13 +27,21 @@ export default function Audio() {
         if (audioRef.current) {
           audioRef.current.play();
         }
+        // Hapus event listener setelah audio mulai diputar
         document.removeEventListener("click", enableAudio);
+        document.removeEventListener("scroll", enableAudio);
+        document.removeEventListener("keydown", enableAudio);
       };
 
+      // Menjalankan audio ketika user melakukan interaksi
       document.addEventListener("click", enableAudio);
+      document.addEventListener("keydown", enableAudio);
+      window.addEventListener("scroll", enableAudio); // Pastikan pakai window, bukan document
 
       return () => {
         document.removeEventListener("click", enableAudio);
+        document.removeEventListener("keydown", enableAudio);
+        window.removeEventListener("scroll", enableAudio);
       };
     }
   }, [isBlocked]);
