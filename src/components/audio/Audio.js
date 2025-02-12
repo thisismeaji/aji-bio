@@ -12,7 +12,6 @@ export default function Audio() {
         await audioRef.current.play();
         setIsBlocked(false); // Jika berhasil autoplay, tidak perlu fallback
       } catch (error) {
-        console.log("Autoplay diblokir, butuh interaksi pengguna:", error);
         setIsBlocked(true); // Tandai kalau autoplay gagal
       }
     };
