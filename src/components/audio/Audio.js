@@ -8,46 +8,63 @@ export default function Audio() {
 
   useEffect(() => {
     const playAudio = async () => {
+      if (!audioRef.current) return;
       try {
         await audioRef.current.play();
-        setIsBlocked(false); // Jika berhasil autoplay, tidak perlu fallback
+        setIsBlocked(false);
       } catch (error) {
-        setIsBlocked(true); // Tandai kalau autoplay gagal
+        setIsBlocked(true);
       }
     };
 
     playAudio();
   }, []);
 
-  // Event listener untuk memutar audio jika autoplay diblokir
   useEffect(() => {
     if (isBlocked) {
       const enableAudio = () => {
         if (audioRef.current) {
-          audioRef.current.play();
+          audioRef.current.play().then(() => {
+            setIsBlocked(false);
+            removeListeners();
+          }).catch(() => {});
         }
-        // Hapus event listener setelah audio mulai diputar
-        document.removeEventListener("click", enableAudio);
-        document.removeEventListener("scroll", enableAudio);
-        document.removeEventListener("keydown", enableAudio);
       };
 
-      // Menjalankan audio ketika user melakukan interaksi
-      document.addEventListener("click", enableAudio);
-      document.addEventListener("keydown", enableAudio);
-      window.addEventListener("scroll", enableAudio); // Pastikan pakai window, bukan document
-
-      return () => {
+      const removeListeners = () => {
         document.removeEventListener("click", enableAudio);
         document.removeEventListener("keydown", enableAudio);
         window.removeEventListener("scroll", enableAudio);
+        window.removeEventListener("wheel", enableAudio);
+        window.removeEventListener("mousemove", enableAudio);
+        document.removeEventListener("touchstart", enableAudio);
+        document.removeEventListener("touchmove", enableAudio);
+        document.removeEventListener("pointermove", enableAudio);
+        document.removeEventListener("mousedown", enableAudio);
       };
+
+      // Tambahkan event listener
+      document.addEventListener("click", enableAudio);
+      document.addEventListener("keydown", enableAudio);
+      window.addEventListener("scroll", enableAudio);
+      window.addEventListener("wheel", enableAudio);
+      window.addEventListener("mousemove", enableAudio);
+      document.addEventListener("touchstart", enableAudio);
+      document.addEventListener("touchmove", enableAudio);
+      document.addEventListener("pointermove", enableAudio);
+      document.addEventListener("mousedown", enableAudio);
+
+      setTimeout(() => {
+        enableAudio();
+      }, 1);
+
+      return () => removeListeners();
     }
   }, [isBlocked]);
 
   return (
     <div>
-      <audio ref={audioRef} src="/assets/sounds/music.mp3" loop />
+      <audio ref={audioRef} src="/assets/sounds/music.mp3" autoPlay loop preload="none" />
     </div>
   );
 }
