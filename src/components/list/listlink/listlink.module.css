@@ -61,3 +61,15 @@
     background-color: var(--background);
     border-radius: 10px;
 }
+
+@media screen and (min-width:786px) and (max-width:1200px){
+    .button{
+        padding: 0.7rem 2rem;
+    }
+}
+
+@media screen and (max-width:786px) {
+    .button{
+        padding: 0.5rem 2rem;
+    }
+}

@@ -4,11 +4,13 @@ import Background from "@/components/background/Background";
 import Link from "next/link";
 import Profile from "@/components/profile/Profile";
 import ListLink from "@/components/list/listlink/ListLink";
+import Audio from "@/components/audio/Audio";
 
 export default function Home() {
   return (
     <section className={Styles.section}>
       <Background />
+      <Audio/>
       <div className={Styles.card}>
         <Profile/>
         <ListLink/>

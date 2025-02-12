@@ -19,9 +19,7 @@ header{
   display: flex;
   justify-content: center;
 }
-body{
-  height: 300vh;
-}
+
 
 h1{
   font-size: 2em;
@@ -48,4 +46,31 @@ section{
   padding: 1rem;
 }
 
+@media screen and (min-width:786px) and (max-width:1200px) {
+  h1{
+    font-size: 1.5em;
+  }
+
+  h2{
+    font-size: 1em;
+  }
+
+  p, a{
+    font-size: 0.9em;
+  }
+}
+
+@media screen and (max-width:786px) {
+  h1{
+    font-size: 1.3em;
+  }
+
+  h2{
+    font-size: 0.9em;
+  }
+
+  p, a{
+    font-size: 0.8em;
+  }
+}
 
