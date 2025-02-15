@@ -48,7 +48,7 @@
     display: inline-block;
     width: 1.5rem;
     height: 1px;
-    background-color: var(--background);
+    background-color: var(--purple);
 }
 
 .menu > span:nth-of-type(1){
