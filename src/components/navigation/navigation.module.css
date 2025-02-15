@@ -5,14 +5,14 @@
     width: 100%;
     max-width: 600px;
     padding: 1rem 1rem;
-
     /* From https://css.glass */
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 5px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+background: rgba(255, 255, 255, 0.2);
+border-radius: 5;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+
 }
 
 .logo{
@@ -46,15 +46,15 @@
 
 .menu > span {
     display: inline-block;
-    width: 1.5rem;
-    height: 1px;
-    background-color: var(--purple);
+    width: 2rem;
+    height: 3px;
+    background-color: var(--background);
 }
 
 .menu > span:nth-of-type(1){
-    width: 1rem;
+    width: 1.4rem;
 }
 
 .menu > span:nth-of-type(3){
-    width: 1.2rem;
+    width: 1.7rem;
 }
