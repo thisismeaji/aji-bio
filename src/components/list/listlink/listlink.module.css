@@ -10,27 +10,25 @@
 
 .list .button{
     width: 100%;
-    padding: 0.9rem 2rem;
+    padding: 0.8rem 2rem;
     font-size: 1em;
     font-family: "Poppins";
     cursor: pointer;
     border: none;
     transition: all 0.3s ease-out;
     border-radius: 5px;
-    background-color: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.31);
+    background-color: var(--purple);
     color: var(--background);
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    color: var(--foreground);
 }
 
 .list .button:hover{
     transform: scale(1.03);
-    color: var(--foreground);
-    background-color: var(--background);
 }
 
 
@@ -38,38 +36,35 @@
     background-color: var(--foreground);
 }
 
-.shareLink{
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 1rem;
-    width: 1rem;
+.button img{
+    width: 100%;
     height: 100%;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    z-index: 10;
-}
-
-.shareLink > span{
-    display: inline-block;
-    width: 5px;
-    height: 5px;
-    background-color: var(--background);
-    border-radius: 10px;
+    max-width: 2.5rem;
+    max-height: 2.5rem;
+    position: absolute;
+    left: 1rem;
+    border-radius: 5px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 @media screen and (min-width:786px) and (max-width:1200px){
     .button{
-        padding: 0.7rem 2rem;
+        padding: 0.6rem 2rem;
+    }
+
+    .button img{
+        max-width: 2.2rem;
+        max-height: 2.2rem;
     }
 }
 
 @media screen and (max-width:786px) {
     .button{
-        padding: 0.5rem 2rem;
+        padding: 0.4rem 2rem;
+    }
+
+    .button img{
+        max-width: 2rem;
+        max-height: 2rem;
     }
 }

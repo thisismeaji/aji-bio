@@ -6,9 +6,10 @@
 }
 
 .image{
-    max-width: 100px;
-    max-height: 100px;
-
+    max-width: 130px;
+    max-height: 130px;
+    border: 3px solid var(--background);
+    border-radius: 100%;
 }
 
 .image img{
@@ -17,6 +18,8 @@
     background-color: var(--white);
     background-color: var(--background);
     border-radius: 100%;
+    object-fit: cover;
+    
 }
 
 .text{
@@ -27,6 +30,8 @@
     text-align: center;
     margin-top: 0.5rem;
     color: var(--background);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    gap: 0;
 }
 
 .text p{

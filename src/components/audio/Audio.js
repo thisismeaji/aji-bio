@@ -59,7 +59,7 @@ export default function Audio() {
 
   return (
     <div>
-      <audio ref={audioRef} src="/assets/sounds/giyusong.mp3" autoPlay loop preload="none" muted />
+      <audio ref={audioRef} src="/assets/sounds/audio.mp3" autoPlay loop preload="none" muted />
     </div>
   );
 }

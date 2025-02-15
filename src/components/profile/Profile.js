@@ -15,11 +15,9 @@ export default function Profile() {
         </div>
         <div className={Styles.text}>
           <h1>Ajisaka Kamandanu</h1>
-          <h2>Bio Link Creator / Frontend Developer</h2>
+          <h2>Bio Link creator / frontend Developer</h2>
           <p>
-            For me, coding is more than just writing lines of code. It's about
-            solving problems, creating smooth experiences, and bringing ideas to
-            life
+          For me, coding is more than just writing lines of code. It's about solving problems, creating smooth experiences, and bringing ideas to life
           </p>
         </div>
     </div>

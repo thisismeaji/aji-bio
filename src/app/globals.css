@@ -1,6 +1,9 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --grey: #F6F7F5;
+  --purple: #B2A5FF;
+  --teks: #493D9E;
 }
 
 * {
@@ -10,30 +13,33 @@
 }
 
 header{
-  position: fixed;
+  position: sticky;
   top: 1rem;
-  left: 0;
   z-index: 1000;
-  top: 10px;
   width: 100%;
   display: flex;
   justify-content: center;
+  padding: 0 1rem;
+}
+main{
+  position: relative;
+}
+
+h1, h2, p, a, li{
+  line-height: 2;
 }
 
 
 h1{
   font-size: 2em;
-  font-weight: 700;
 }
 
 h2{
   font-size: 1em;
-  font-weight: 500;
 }
 
 p{
   font-size: 1em;
-  font-weight: 400;
 }
 
 a{
